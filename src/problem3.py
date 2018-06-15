@@ -38,7 +38,7 @@ def main():
 def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # done: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
     # ------------------------------------------------------------------
@@ -152,7 +152,7 @@ def problem3a(window, point, n):
         :type n:      int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -238,7 +238,7 @@ def problem3b(m, point1):
         :type point1: rg.Point
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -251,6 +251,21 @@ def problem3b(m, point1):
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # ------------------------------------------------------------------
+    total_thickness = 0  # final value returned
+
+    window = rg.RoseWindow(400, 650)
+    lines = 3
+    k = problem3a(window, point1, lines)
+    total_thickness = total_thickness + k
+    for _ in range(m - 1):
+        point1 = rg.Point(point1.x, point1.y + 60)
+        lines = lines + 2
+        k = problem3a(window, point1, lines)
+        total_thickness = total_thickness + k
+    window.render()
+    window.close_on_mouse_click()
+
+    return total_thickness
 
 
 # ----------------------------------------------------------------------
