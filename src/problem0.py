@@ -314,11 +314,11 @@ def problem0c(circle, n, window):
     radius = circle.radius
 
     for _ in range(n):
-        circle = rg.Circle(rg.Point(x_initial + (radius * 2), y_initial),
+        x_initial = x_initial + (radius * 2)
+        circle = rg.Circle(rg.Point(x_initial, y_initial),
                            radius)
         circle.attach_to(window)
-
-    window.render(0.5)
+        window.render(0.5)
 
 
 # ----------------------------------------------------------------------
