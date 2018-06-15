@@ -121,7 +121,7 @@ def problem2a(circle, rectangle, window):
     start = rectangle.get_upper_right_corner()
     end = rectangle.get_lower_left_corner()
     line = rg.Line(start, end)
-    # not sure how to turn line into an arrow
+    line.arrow = 'last'
     line.attach_to(window)
 
     window.render()
